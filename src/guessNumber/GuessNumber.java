@@ -1,34 +1,33 @@
 package guessNumber;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
     public static void main(String[] args) {
-        GuessNumber zgadnijLiczbę = new GuessNumber();
+        GuessNumber guessNum = new GuessNumber();
         System.out.println("Zgadnij liczbę z przedziału: [100 - 200]");
-        zgadnijLiczbę.zgadnij();
+        guessNum.guess();
     }
 
-    public void zgadnij(){
+    public void guess(){
         int liczbaPrawidłowa = 123;
         Scanner sc = new Scanner(System.in);
         int liczbaUżytkownika = sc.nextInt();
-        boolean liczba = false;
+        boolean number = false;
 
-        while (liczba == false){
+        while (number == false){
             if (liczbaUżytkownika == liczbaPrawidłowa){
                 System.out.println("Wygrana");
-                liczba = true;
+                number = true;
             }else if (liczbaUżytkownika < liczbaPrawidłowa){
                 System.out.println("Podana liczba jest za mała");
                 System.out.println("Podaj kolejną liczbę: ");
-                liczba = false;
+                number = false;
                 liczbaUżytkownika = sc.nextInt();
             }else if (liczbaUżytkownika > liczbaPrawidłowa){
                 System.out.println("Podana liczba jest za duża");
                 System.out.println("Podaj kolejną liczbę: ");
-                liczba = false;
+                number = false;
                 liczbaUżytkownika = sc.nextInt();
             }
 
